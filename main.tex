@@ -1,0 +1,82 @@
+\documentclass{report}
+%\documentclass[format=acmsmall, review=false, screen=true]{acmart}
+
+\usepackage{suthesis-2e}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+
+\dept{Computer Science}
+
+% start of things that are duplicated with the acm template
+
+
+\usepackage{array,booktabs,amsmath,graphicx,fancyvrb,tabularx}
+\usepackage[tt=false, type1=true]{libertine}
+\usepackage[varqu]{zi4}
+\usepackage[libertine]{newtxmath}
+\usepackage[tableposition=top]{caption}
+\usepackage{hypdoc}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+% end of things that are duplicated with the acm template
+
+
+\usepackage{booktabs} % For formal tables
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+
+%\usepackage{tabularx}
+\usepackage{dcolumn}
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+\newtheorem*{resques}{Research Question}
+\newtheorem{hyp}{Hypothesis}
+
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\begin{document}
+
+
+\newcommand{\msb}[1]{\textcolor{blue}{#1}}
+\newcommand{\jingyi}[1]{\textcolor{olive}{Jingyi: #1}}
+\newcommand{\rak}[1]{\textcolor{orange}{rak: #1}}
+
+\newcommand{\rev}[1]{\textcolor{black}{#1}}
+
+\newcommand{\geza}[1]{\textcolor{purple}{#1}}
+\newcommand{\gezacomment}[1]{\textcolor{red}{#1}}
+
+
+% Document starts
+\title{HabitLab: \\In-the-wild Behavior Change Experiments at Scale}
+\author{Geza Kovacs}
+\principaladviser{Michael Bernstein}
+\firstreader{James Landay}
+\secondreader{BJ Fogg}
+
+% Title portion. Note the short title for running heads
+
+\input{contents}
+
+\bibliographystyle{plain}
+\bibliography{1_bibliography}
+\end{document}
+
+%\bibliographystyle{ACM-Reference-Format}
+%\bibliography{1_bibliography}
+
+%\input{appendix1}
+%\appendix
+%\input{1_appendix2.tex}
+
+%\end{document}

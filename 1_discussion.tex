@@ -1,0 +1,75 @@
+\section{Discussion}
+
+%\msb{This section needs more meat}
+
+Our findings suggest that changing behavioral interventions can be beneficial from the perspective of efficacy, but detrimental to retention. By showing simple messages when presenting new interventions, we can improve users' mental models, and reduce attrition from changing interventions.
+
+In addition to the interface-based techniques we have presented to combat detrimental effects of changing interventions, algorithmic techniques can also help. For example, in the context of a multi-armed bandit, potential algorithmic techniques include:
+
+\begin{enumerate}
+\item Limiting the exploration speed such that users are not overwhelmed by the rate at which they are seeing new interventions.
+\item Modeling individual interventions' likelihood of attrition, and favoring algorithms which are less likely to cause attrition if needed to keep the user around longer.
+\end{enumerate}
+
+There are also additional interface-based techniques that may be helpful in reducing attrition from changing interventions, but that we have not tested, such as:
+
+\begin{enumerate}
+\item Making how new interventions are introduced predictable and known to the user.
+\item Allowing users a choice of intervention when we introduce new interventions.
+\end{enumerate}
+
+
+
+\subsection{Limitations}
+This work featured deployment periods of a few weeks.  This may not be enough time to observe some very long-term effects: for example, some changes in intervention effectiveness set in only after months or years \cite{krebs2010meta}. That said, given the fast turnover rate which is observed with behavior-change software, even short-term effects of changing interventions on attrition can be important.
+
+While we believe our general finding about the double-edged nature of changing interventions may apply to other behavior-change contexts, particular parameters---such as speed at which users grow blind to an intervention, may be domain-specific.
+
+One shortcoming of our Study 1 design is that we cannot rule out the possibility that our observed increase in effectiveness is due to selective attrition, rather than due to benefits from the rotation. Namely, it is possible that observing rotation may selectively lead to uninstallation for users for whom interventions are ineffective. To rule out this possibility, we will need to investigate ways to maintain retention in the presence of rotation, and see whether the improvement in effectiveness relative to a static intervention still remains. It may also be possible to design intention-to-treat analyses that discount attrition in measures of effectiveness. \rev{Furthermore, while we observed that the first visit is longer than subsequent visits when users visit sites multiple times per day, but this effect may be due to temporal usage patterns rather than intervention effectiveness}.
+
+% The nature of the HabitLab platform---using organic, real-world users for research---imposes constraints on the types of qualitative work we can do. As evidenced by the number of users who uninstall before even seeing their first intervention, real-world users have limited patience, and would quickly leave if we began forcing them to fill out surveys or interrupting them throughout the day with experience sampling. We hence have limited sources for qualitative feedback from users---we have engaged in in-person usability sessions, provide optional feedback forms built into the settings pages and interventions, provide support through email, the Gitter chat system, and our issue tracker on Github, and show a feedback form upon uninstall. However, feedback is still restricted to a small proportion of users. Recruiting users in the traditional fashion and paying them to complete surveys would help us get richer qualitative feedback to complement this in-the-wild experimentation, possibly at some cost to external validity.
+
+% Given the sources of through which users discovered HabitLab---technology news websites like Wired and open-source projects---we likely had a population that was more tech-savvy than the general population. Certain results we found---such as a high rate of users changing defaults and wanting to be able to configure the extension---may not generalize to broader populations. It is possible that, like the interventions themselves, designs to reduce attrition rates are not one-size-fits-all, but need to be personalized to the population that is being targeted.
+
+\rev{Because users have differing preferences, interventions may have differing rates of attrition for each user.  An ideal retention-maximizing system would not assign interventions randomly, but would personalize interventions to each user. Assuming there is a novelty component to attrition --- i.e., users quit because they grow bored of the same intervention --- then a system which intelligently times interventions to minimize attrition can in theory have lower attrition than even the best static intervention. There are 2 difficulties in making this a reality: first is needing to learn to correctly predict which intervention would minimize attrition for a user at a given time, a reinforcement learning problem. Second, as shown by the increase in attrition when using a na\"{i}ve rotation strategy, a system that switches between interventions also needs to overcome the barriers of needing users to develop more complex mental models, and ensuring that users feel in control.}
+
+% \rev{Although we have focused on effects of rotation strategies on attrition, attrition is also influenced by many other factors, such as the population of users, their commitment, and whether interventions match the user's needs. For example, we observe improved retention for users who change the default set of interventions during onboarding, which reflects investment in the system. Interventions have differing overall rates of attrition. For example, among users in the one intervention condition of Study 2 who used Facebook, the 70 day retention rate was 9\% higher if they were assigned to the Time Injector intervention than if they were assigned to the Remove Comments intervention. Given that users have differing preferences, a system that maximizes retention would not assign interventions randomly as we did, but would personalize interventions to each user. The difficulty of this is being able to learn which interventions would minimize attrition for a new user.}
+
+% For example, among users in the one intervention condition of Study 2 who used Facebook, the probability of a user staying for 70 days if they were randomly assigned to have the Time Injector intervention was 19\% higher than if they were assigned to have the Remove Comments intervention
+
+% Finally, as we saw in our qualitative analysis of users' self-reported reasons for uninstalling, attrition can have many causes. Especially in the context of Chrome extensions which automatically install themselves across users' devices, we cannot assume that devices equal users. Much attrition can also be caused by a mismatch of user expectations and what the system provides---many users were looking simply for a time tracking system, and did not want interventions at all. Users are also diverse in what they want from a system---some wanted more aggressive interventions, others wanted less aggressive interventions; some liked the system's gamification features, others hated them. %This is yet another reminder that %Hence, as has been demonstrated numerously in the past, 
+%at-scale socio-technical systems have diverse users whose needs are different than those of the initial user base, %different from how the designers had envisioned, which 
+%making it challenging to interpret needfinding results and project them out to what dynamics might occur at larger scale.% deployments do we learn how users will actually use our systems.
+
+\subsection{Design reflections on social computing and behavior change}
+
+Social systems are inherently tied to behavior change and retention. Social networks and other social apps and services make heavy use of gamification and behavior change techniques to drive engagement and boost retention~\cite{eyal2014hooked, chou2015actionable}. A system like HabitLab that helps users use these services less thus occupies an interesting space: it is modifying the service to hide the features that serve to boost engagement, helping users break away from their addiction to the site.
+
+But we tread a fine line: behavior change systems themselves suffer from attrition, so we may sometimes need to make tradeoffs between better retaining users and helping them regulate their behaviors. For example, the Facebook interventions in HabitLab with the lowest attrition---those that passively show time spent---are among the least effective. %Additionally, what matters from the perspective of retention is user perceptions of effectiveness, as opposed to actual effectiveness, which opens up a design space of ethically dubious solutions for boosting retention. 
+Is telling users that the system is helping them more than it actually is a form of benevolent deception~\cite{adar2013benevolent} that would ultimately help boost retention and help users achieve their goals? Would gamifying the system with social features, making users connect with friends and keep tabs on their friends' social media usage, help boost retention and effectiveness---even though users may lose time engaging with social features?
+
+% The question of effects of change and correct mental models on attrition is of utmost importance for the design of large social software systems. Any socio-technical system will periodically experience major updates as well as minor changes through A/B testing. There are countless examples of user communities experiencing attrition due to changes to the social software system. For example, there was a user revolt on Digg in 2010 due to their v4 update, followed by a mass exodus to Reddit; entire subreddits have relocated due to changes in community policies; Mechanical Turk workers erupted in anger when a third party, IRB-approved researcher injected content into Turkopticon tool~\cite{salehi2015we}. 
+% However, when the community is informed and has buy-in on the changes, self-experimentation can become a powerful tool~\cite{matiascivilservant}. How might we design interventions that prepare users for changes in the social system, or which would give them better mental models to understand the changes?%, have helped prevent these user revolts?
+ %there have been numerous user revolts on Facebook due to users gaining a better mental model of how data sharing, privacy risks, and online experimentation work.
+
+% there's a list of other examples at https://en.wikipedia.org/wiki/User_revolt
+
+%\msb{Needs a subsection on: what's the relevance of all of this to CSCW? Brainstorming: }
+%\begin{itemize}
+%\item social media are increasingly in the game of engagement hacking, so important that we understand how to push back
+%\item opportunities for community-based authoring of interventions, or learning across people
+%\item ``big data'' behavior change
+%\item behavior change rarely happens in a single user vacuum
+%\end{itemize}
+
+% Limitations and whatnot - does this generalize beyond our domain? What would we observe in a longer deployment?
+
+% Applications to design of better algorithms
+
+% Multi armed bandit which maintains novelty even after converging
+
+% Timing the introduction of interventions
+
+% Algorithmic techniques we propose to limit attrition caused by alternating between interventions are 1) limit the exploration speed such that the user is not overwhelmed by the rate at which they are seeing new interventions, and 2) model individual interventions' likelihood of causing attrition so that the algorithm is less likely to show interventions which are likely to cause attrition.
+
+% UI techniques we propose to give users a sense of control and reduce violation of expectations caused by the system randomly introducing new interventions are 1) explicitly show users when a new intervention is going to be introduced with an option to opt-out of seeing it, and 2) make the schedule at which new interventions are introduced predictable and known to the user.

@@ -1,0 +1,43 @@
+\section{Study 2: Longer-Term Effects of Rotation on Attrition}
+
+% Study 1 found that compared to static interventions, rotation increases effectiveness but also increases attrition. To provide additional support for our findings in Study 1 and motivate our design experiment, we will now present a second field study that compared the effects of the amount of rotation on attrition rates. This study seeks to answer the question: Does the number of interventions in the rotation affect the level of attrition? In other words, is the effect due to the sheer existence of rotation, or is the number of alternatives important?
+%\item Is user control over the interventions included in rotation associated with attrition rates?
+%\end{enumerate}
+
+% This second study occurs over a longer period than Study 1---ten weeks---allowing us to examine these effects in a more longitudinal setting.
+
+Study 1 found that compared to static interventions, rotation increases effectiveness but also increases attrition. To provide additional support for our findings in Study 1 and motivate our design experiment, we present a second field study that seeks to answer the question: Does the number of interventions in the rotation affect the level of attrition? This study occurs over a longer period --- ten weeks --- allowing us to examine these effects in a more longitudinal setting.
+
+\subsection{Participants}
+
+% started Jan 24
+% ended Feb 26
+
+Our participants were HabitLab users who installed over a 5 week period in January--February 2018 and consented to our experiment protocol. 680 users who agreed to participate. After excluding users with multiple devices, users who did not complete the onboarding process, and users who had less than two sessions on Facebook where they saw interventions --- we restricted analysis in this study to users who were using Facebook because it had the most number of default interventions available --- we were left with 409 participants. Demographics were similar to Study 1.
+
+\subsection{Method}
+
+This was a between-subjects study where users' default settings for the number of enabled interventions varied depending on their condition: some users only had one default enabled intervention, and others had more. Interventions were then selected randomly from the enabled set. Among users who did not change these defaults, this enabled a between-subjects comparison of the effects of the number of interventions a user was rotating between, on retention rates.
+
+% 163/225=0.7244444444444444 changed interventions for one condition
+% 138/211=0.6540284360189573 changed interventions for half condition
+% 137/200=0.685 changed interventions for all condition
+
+In practice, we found that many users changed the set of interventions --- 78\% of participants in this study changed them over the course of using HabitLab, most often during onboarding. We wanted to retain a good user experience, but this muddied the experimental manipulation. So, we restricted analysis to the 91 users who did not change defaults. A $\chi^2$ test found there was no significant effect of condition on whether users changed defaults ($\chi^2(2)$= 0.4671, p=0.8), suggesting that randomization remained effective even after this filter.
+
+% 72\% changed defaults in the one default condition, 65\% changed defaults in the half defaults condition, and 69\% changed defaults in the all defaults condition -- a chi squared test found there was no significant difference between categories for whether users changed defaults or not (chisquared= 0.4671, p=0.8). % (chisquared= 0.4671, p=0.791723) %\msb{The regression output says $N=91$. See \ref{tab:cox_regression_between_participants}. Where did the other people go?} \gezacomment{91 did not change ever, 117 did not change within the first 5 minutes}
+
+Unlike Study 1, this was a between subjects experiment, so there were no time blocks: participants were assigned to the condition for the duration of the study.
+
+\subsection{Conditions}
+Participants were randomized into three conditions. In the one intervention condition, for every site the user enabled HabitLab on, only one intervention was enabled by default. The intervention was randomly chosen among the set of default interventions for that site. This is equivalent to the static condition from Study 1.
+
+In the all interventions condition, for every site the user enabled, all interventions that are default for that site were enabled by default. This is equivalent to the rotation condition from Study 1. In the half interventions condition, for every site the user enabled, half of all interventions that are default for that site were enabled by default. The subset was chosen randomly.
+
+\subsection{Measures}
+
+We measured attrition, using the same procedures as those described in Study 1.
+
+\subsection{Method of Analysis}
+
+Like Study 1, we applied a Cox proportional hazards regression model to compare attrition rates.

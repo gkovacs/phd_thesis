@@ -1,0 +1,43 @@
+\pagebreak
+
+\section{Appendix: Replication of Study 1 Findings using Session Level Measurements}
+
+This appendix replicates the findings of Study 1 using an alternative method of analysis, looking at time on site per session rather than day.
+
+Time on site per session is measured as the total time the user was actively using a site in a browser tab, from when they visited the site until they closed the tab. If the user switches tabs to a different site, the time spent on the other site is not counted towards the current session time.
+
+To determine whether the user is actively using a target site, we use Chrome's internal definition of active -- the browser window and tab is focused, the computer screen is on, and there has been mouse or keyboard activity on the tab within the past minute. 
+Because time data is not normally distributed, we adopt a common practice of log-transforming the time data prior to analysis.
+
+% Time on site per day is measured as the aggregated time across sessions from midnight to midnight in the participant's local timezone. There was one session data point per user per session per web site, and one day data point per user per day per web site.
+
+\subsection{Effectiveness of interventions over time}
+
+The likelihood ratio test confirms that the number of times a user has seen an intervention affected the log of time spent on a domain per session ($\chi^{2}(1) = 6.69, p < 0.01$), supporting H\ref*{hyp:decreaseovertime}. Each time the intervention has been previously seen increased the log time spent by 0.05633 (Table~\ref{tab:effectiveness_sessions_alldomain_vs_num_days_same_sessions}). By exponentiating the log estimates, this translates into an increase of 5.8\% on top of a baseline 46 seconds per session for each additional time the user saw the intervention during the study. %Note that since the dependent variable is log time rather than raw time, this 15\% estimated increase is multiplicative for each additional day.
+
+An alternative method of analysis, where we measure the raw number of times the intervention has been seen instead of the number of days it has been seen, yields the same results. %\msb{does an equivalent analysis at the day level yield the same results? otherwise why did we make such a big deal of having both session and day data? If we're going to report both, we need to report both for all studies. Otherwise we need to cut and use just one.} %Restricting analysis to just Facebook also yields the same results.
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, Apr 18, 2018 - 19:22:06
+\begin{table}[tb] \centering 
+  \caption{Within the static condition, interventions decline in effectiveness, with longer visit lengths with increasing larger number of days since it was first observed.} 
+  \label{tab:effectiveness_sessions_alldomain_vs_num_days_same_sessions} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Log time spent per session \\ 
+\hline \\[-1.8ex] 
+ Number of days the intervention has been seen & 0.056$^{***}$ \\ 
+  & (0.021) \\ 
+  (Intercept) & 3.826$^{***}$ \\ 
+  & (0.143) \\ 
+ \hline \\[-1.8ex] 
+Observations & 1,007 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
