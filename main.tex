@@ -17,11 +17,15 @@
 \usepackage[libertine]{newtxmath}
 \usepackage[tableposition=top]{caption}
 \usepackage{hypdoc}
+\usepackage[colorlinks=false]{hyperref}
 
 \usepackage{amsthm}
 \usepackage{graphicx}
 
 % end of things that are duplicated with the acm template
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{1_bibliography.bib}
 
 
 \usepackage{booktabs} % For formal tables
@@ -69,7 +73,9 @@
 \input{contents}
 
 \bibliographystyle{plain}
-\bibliography{1_bibliography}
+%\bibliography{1_bibliography}
+\printbibliography
+
 \end{document}
 
 %\bibliographystyle{ACM-Reference-Format}
