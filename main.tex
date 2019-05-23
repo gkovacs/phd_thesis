@@ -3,8 +3,8 @@
 
 \usepackage{suthesis-2e}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 
 \dept{Computer Science}
 
@@ -16,7 +16,7 @@
 \usepackage[varqu]{zi4}
 \usepackage[libertine]{newtxmath}
 \usepackage[tableposition=top]{caption}
-\usepackage{hypdoc}
+%\usepackage{hypdoc}
 \usepackage[colorlinks=false]{hyperref}
 
 \usepackage{amsthm}
@@ -24,8 +24,10 @@
 
 % end of things that are duplicated with the acm template
 
-\usepackage[backend=biber]{biblatex}
-\addbibresource{1_bibliography.bib}
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{1\_bibliography.bib}
+%\addbibresource{2\_bibliography.bib}
+
 
 
 \usepackage{booktabs} % For formal tables
@@ -73,8 +75,8 @@
 \input{contents}
 
 \bibliographystyle{plain}
-%\bibliography{1_bibliography}
-\printbibliography
+\bibliography{bibliography} % , 2_bibliography.bib
+%\printbibliography
 
 \end{document}
 

@@ -1,0 +1,70 @@
+\section{Study: Redistribution of Time Within and Across Devices}
+
+In this study we aim to analyze whether productivity interventions are reducing or redistributing time. We pursue this through an experiment and three sets of analyses:  \textit{(1)~Within-device redistribution of time, in the browser}. For example, this would be the effects on time spent on non-Facebook websites, due to interventions that run when visiting the Facebook website. \textit{(2)~Within-device redistribution of time, on mobile devices}. For example, this would be the effects of time spent on non-Facebook applications, due to interventions that run when using the Facebook app. \textit{(3)~Cross-device redistribution of time}. For example, this would be the effects of time spent on Facebook on the phone, due to interventions that run when visiting the Facebook website.
+
+\subsection{Participants}
+
+Participants in this study consisted of new HabitLab users who installed either the HabitLab Chrome extension or Android app over a period of 132 days (approximately 19 weeks) in July through December 2018. $3747$ users installed the HabitLab Chrome version over the course of our experiment and consented to our research protocol. $1483$ users did so for the Android version. $298$ installed both and signed in with their Google accounts, allowing us to analyze their usage across devices. We discarded participants who were not new users of HabitLab, since some users were re-installs or new devices for existing users. We also discarded participants who did not complete the onboarding process, or who uninstalled the system before they saw their first intervention. This left us with $1790$ participants for Chrome, $782$ participants for Android, and $82$ participants for whom we could analyze usage across both. A summary of our dataset is shown in Table~\ref{tab:data_summary}.
+% \msb{move Table~\ref{tab:data_summary} up here}
+
+\begin{table}[tb]
+\caption{Data Summary. Note that the duration of 132 days are users who kept it installed the longest, but as users can freely install/uninstall we do not have 132 days of data on all users. %\msb{why no duration for browser and synced?}
+%\msb{there's a latex package that makes large numbers more readable. barring that, round and simplify, e.g. 10.1 million}
+}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+                         & \textbf{Browser} & \textbf{Android} & \multicolumn{2}{c}{\textbf{Synced}} \\ \midrule
+%\textbf{Time Duration}   & \multicolumn{4}{c}{18.8 Weeks}                                             \\
+\textbf{Time Duration} & 132 days             & 132 days              & \multicolumn{2}{c}{132 days} \\
+%\textbf{No. of Users}    & 516              & 876              & \multicolumn{2}{c}{127}             \\
+\textbf{No. of Users}    & 1790             & 782              & \multicolumn{2}{c}{82}             \\
+\textbf{No. of Sessions} & 4.8 million           & 11.3 million          & \multicolumn{2}{l}{3.8 million}                \\ \bottomrule
+\end{tabular}
+\label{tab:data_summary}
+\end{table}
+
+\subsection{Method}
+
+% \zilin{Done}\msb{Start by stating your goal, then say how you achieved it. For example, you want to be able to see what happens to other goals when a focal goal is active. Ideally you'd randomize whether a goal is on or off. However,  you don't want the app to ``break'' and not show interventions for goals that are on. So you change the intervention to show it less frequently. etc. Most of that content is here but it launches straight into the design rather than first outlining the goals, so the reader doesn't know what you're aiming for} 
+% In order to observe time redistribution between a focal goal and other goals, we need to introduce variations in the aggressiveness of interventions. While we are not able to measure directly how aggressive the interventions are, we can randomly activate/ deactivate HabitLab for a time period.
+
+In order to observe time redistribution effects between a focal goal and other goals due to interventions, we would ideally randomly turn interventions on and off for goals, then observe the effects on other goals. However, because HabitLab informs users that it will show interventions on goals that they select, there would be negative consequences (e.g., user confusion and dissatisfaction) if interventions for an application disappeared entirely for a week. Therefore, we opt to vary frequency rather than entirely turn off interventions for a goal each week. %, as the latter may result in user confusion. %Therefore, we vary the frequencies of showing interventions for users each week.
+
+So, for each goal on each device, we randomize frequency of interventions each week. On weeks where a goal is set as frequent, an intervention is shown on every visit to the app or site. On weeks where a goal is set as infrequent, an intervention is shown with probability $0.2$ on every visit to the app or site. We choose this methodology of varying frequency to approximate the effects of turning interventions entirely on or off. %We opted to vary frequency rather than entirely turning off interventions for a goal each week, as the latter may result in user confusion. \jake{the preceeding parenthetical might be redundant based on the statements in the preceeding paragraph} We then are able to see the effects of interventions on time spent on a particular goal.
+
+We analyze the effects interventions have on overall time spent on goals in the browser and mobile environments. We do so with a linear mixed model, which models the relationship between a dependent variable of time spent that day on a goal, an independent variable of goal frequency (frequent or infrequent), and categorical variables for the user and the goal site or app (e.g., Facebook, YouTube, Reddit) as random effects. We run the model separately on both the data from the browser and mobile versions. %We chose to include the user and goal as random effects as time spent can vary depending on the user, as well as the site or app being used. 
+Our results here can also be replicated with a simpler model of an independent sample t-test modeling the effects of frequency on time spent.
+
+\subsection{Intensity}
+
+%We defined a concept of \textit{intensity} as the fraction of interventions which are frequent.
+
+%\zilin{Done}\msb{Start with the goal. what are you trying to  capture? a holistic measure of how aggressive the system is overall across all goals?} 
+Frequency measures how much a user is being nudged in a single goal, but our experiment also needs to measure how much a user is being nudged overall, across all goals on the platform. This allows us to, for example, measure whether mobile device usage increases when browser interventions are overall more frequent, or whether time spent on non-goal sites increases when interventions are more frequent on goal sites. So, we define a measure of \textit{intensity}: the percentage of sessions on any goal that triggered an intervention. For example, if the goal apps are Facebook and YouTube, the user visited Facebook 10 times and saw interventions 2 times, and visited YouTube 3 times and saw interventions 3 times, then the intensity is $\frac{5}{13}=.38$. Intensity will naturally vary over time as goals are re-randomized into \textit{frequent} and \textit{infrequent} conditions, with more frequent goals increasing intensity and more infrequent goals decreasing intensity. This randomization occurs for all goals simultaneously, once a week. %\msb{I never saw anywhere in this method section---does it state that each application is re-randomized on a predetermined but random day of the week? Right now it reads like the randomization happens for all goals at once, once per week.} %We use this intensity measure to analyze redistribution across devices -- i.e., by varying intensity on one device, what is the effect on time spent on the other device.
+We chose this intensity metric for our analysis, as opposed to alternatives such as raw number of times interventions were seen, because: 1)~it is independent of the dependent variable, total time spent; 2)~it is independent of the number of times the user visits a site/app; 3)~it is guaranteed to be between 0 to 1, which is useful for interpretation; and 4)~it can be used for both within-device and cross-device analysis.
+
+% We chose this intensity metric for our analysis, as opposed to alternatives such as raw number of times interventions were seen, because: 1) it is independent of the dependent variable, total time spent; 2) it is independent of the number of times the user visits a site/app; 3) is guaranteed to be between 0 to 1 (useful for interpretation); and 4) can be used for both within-device and cross-device analysis. In contrast, the number of times an intervention is seen is 1) correlated with the DV (on days users open apps more, they see more interventions); and 2) is correlated with the number of sessions per day (apps users use more will have a higher number of interventions seen). We did not include the set of apps selected or interventions seen as a random effect because our DV is total time spent on all goal sites, so we would have to control for a set of apps (exponential in the number of apps --> overfit model) - this also applies to controlling sets of interventions seen.
+For each goal, we also define a measure of \textit{intensity of other goals}. This is the intensity measure excluding the current goal. We will use it for analyzing redistribution of time within device: when intensity of other goals varies, what is the effect on time spent on a target goal?
+
+\subsection{Time Redistribution}
+
+\subsubsection{Within Device}
+
+We analyze the effects of interventions on time redistribution within device. We define \textit{time redistribution within device} as an increase in time spent on the goal on the device, as a result of a change in intensity of other goals.
+%\zen{should we point out something like we presume intensity of a goal is correlated with time spent?} %\msb{this doesn't make sense to me. isn't the DV just time spent? we don't need an additional measure here?}
+For example, an increase in time spent on YouTube as a result of turning Facebook interventions on would be an example of time redistribution from Facebook to YouTube.
+
+We do so with a linear mixed model, which models the relationship between a dependent variable of time spent that day on all goals, an independent variable of intensity of goals, as well as the user as a random effect. We run the model separately on both the data from the browser and mobile versions. Because our time data is log-normally distributed, we fit our linear mixed models to log time.
+
+% wrong linear mixed model
+% We do so with a linear mixed model, which models the relationship between a dependent variable of time spent that day on a goal, an independent variable of intensity of other goals, a fixed effect of goal frequency (either frequent of infrequent), and the particular goal site or app (i.e., Facebook, Youtube, Reddit, etc.), as well as the user, as random effects. We run the model separately on both the data from the browser and mobile versions. Note that because our time data is log-normally distributed, we will fit our linear mixed models to log time.
+
+\subsubsection{Across Device}
+
+We analogously define time redistribution between devices as an increase in time spent on the other device, as a result of interventions increasing in frequency in the other device. For example, an increase in time spent on Facebook on the browser, as a result of increasing the frequency of interventions on mobile would be an example of time being redistributed from mobile to browser.
+
+We do so with a linear mixed model, which models the relationship between a dependent variable of time spent that day on all goals on one device, an independent variable of intensity of goals on the other device, and the user as a random effect. We run the model separately on data in both directions: one analyzing the effects of browser intensity on time spent on mobile, and another analyzing the effects of mobile intensity on time spent on the browser. We again log transform our time data for analysis.
+
+% wrong linear mixed model
+% We do so with a linear mixed model, which models the relationship between a dependent variable of time spent that day on a goal, an independent variable of intensity of goals on the other device, a fixed effect of goal frequency (either frequent of infrequent), and the particular goal site or app (i.e., Facebook, Youtube, Reddit, etc.) as a random effect. We run the model separately on both the data from the browser and mobile versions. Note that because our time data is log-normally distributed, we will fit our linear mixed models to log time.
+
