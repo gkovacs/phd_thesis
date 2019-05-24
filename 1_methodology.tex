@@ -20,7 +20,7 @@ We do not administer a demographic survey at install time, because long onboardi
 
 %\msb{Tweaked and moved up to the Participants section:}
 
-\rev{Participants agreed to our informed consent protocol during onboarding. This consent protocol indicated that HabitLab would be selecting and rotating between different interventions, but did not mention any specific algorithm or rotation schedule.}
+Participants agreed to our informed consent protocol during onboarding. This consent protocol indicated that HabitLab would be selecting and rotating between different interventions, but did not mention any specific algorithm or rotation schedule.
 
 \subsection{Method}
 %\msb{The entire title and intro use ``static`` and ``rotation'', we need to be consistent. I'm changing to rotation but if you want ``random'' and ``same'' let's talk and align.}
@@ -43,7 +43,7 @@ The experimental unit was a participant assigned to a condition for a block of d
 \subsection{Conditions}
 We developed a within-subjects repeated measures design, where users alternated between blocks of time during which they were shown either a static intervention or rotated interventions. A within-subjects design such as this allows us to better control for the large variability across users in how much time they spend on a site.
 
-The static condition captures a typical behavior change design with one strategy. At install time, for each site, the participant is randomly assigned a single intervention among the ones that are enabled for the site. Whenever they visit that site on a day in the static condition, the participant will always see that intervention, \rev{i.e. the static intervention is the same across all blocks.}
+The static condition captures a typical behavior change design with one strategy. At install time, for each site, the participant is randomly assigned a single intervention among the ones that are enabled for the site. Whenever they visit that site on a day in the static condition, the participant will always see that intervention, i.e. the static intervention is the same across all blocks.
 
 The rotation condition captures a strategy of keeping the interventions changing so that users do not begin ignoring them. Each time a participant in the rotation condition visits a target site (e.g., Facebook), HabitLab picks a random intervention from the enabled set to display.
 
@@ -75,7 +75,7 @@ For analyzing effectiveness at both the day and session level, we used a linear 
 
 %Upon installation, users chose which sites they want HabitLab to track. Because users spend differing amounts of time on different domains, and there was a long tail of domains which were set as goal sites by only a few users, we restricted analysis to the top 5 domains that our participants marked as wanting to spend less time on: Facebook, Youtube, Reddit, Twitter, and VK (a Russian social network).
 
-To test whether interventions decrease in effectiveness over time (H\ref*{hyp:decreaseovertime}), we focused on just data points from the static condition. The model included a term for the number of days that particular intervention had previously been seen,\footnote{\rev{Repeating the analysis using the number of times the intervention had been seen yields the same conclusions.}} a random effect for the participant, and a random effect for domain. To test linear mixed models for significance, we used a likelihood ratio test to compare a reduced model without the number of days predictor to the full model. A significant test indicates that the number of days has statistically significant explanatory power, analogous to a significant beta coefficient in a traditional regression.
+To test whether interventions decrease in effectiveness over time (H\ref*{hyp:decreaseovertime}), we focused on just data points from the static condition. The model included a term for the number of days that particular intervention had previously been seen,\footnote{Repeating the analysis using the number of times the intervention had been seen yields the same conclusions.} a random effect for the participant, and a random effect for domain. To test linear mixed models for significance, we used a likelihood ratio test to compare a reduced model without the number of days predictor to the full model. A significant test indicates that the number of days has statistically significant explanatory power, analogous to a significant beta coefficient in a traditional regression.
 
 To test whether static or rotated interventions increase effectiveness (H\ref*{hyp:rotation}), we used data from both the static and rotation conditions. This second LMM, predicting log time spent on the site each day, included a random effect for participant, a random effect for domain, a fixed effect for block length, and a fixed effect for condition. A likelihood ratio test compared to a reduced model without the condition variable. 
 
