@@ -67,20 +67,18 @@ On the Chrome version, users choose sites to spend less time on (goal sites -- f
 
 %\section{Browser Version}
 
-Users install the extension, and go through an onboarding process where they select sites and apps they wish to reduce their time on (Figure~\ref{fig:onboarding_sites}). There are predefined options---Facebook and YouTube are selected by default, as they were the most commonly used---but users can also add any custom site. Custom sites are suggested via an analysis of the user's browsing history. The system explains to users that they will be shown a variety of interventions (Figure~\ref{fig:onboarding_nudges}), a form of self-experimentation~\cite{Karkar:2017:TFS:3025453.3025480}, to help them reduce time on that site. These interventions are typically targeted to each site, for example a news feed blocker for Facebook or a related video hider for YouTube. However, some interventions such as a stopwatch timer can be added to any custom site. Users can preview the interventions for the sites they select, and enable or disable each intervention if desired. Users can later enable or disable interventions and sites through a settings page.
-
 \begin{figure}
-\begin{minipage}[t]{0.49\linewidth}
 \includegraphics[width=\linewidth]{figures/onboarding_sites}
 \caption{During onboarding, users choose which sites they want to spend less time on.}
   \label{fig:onboarding_sites}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.49\linewidth}
+\end{figure}
+
+Users install the extension, and go through an onboarding process where they select sites and apps they wish to reduce their time on (Figure~\ref{fig:onboarding_sites}). There are predefined options---Facebook and YouTube are selected by default, as they were the most commonly used---but users can also add any custom site. Custom sites are suggested via an analysis of the user's browsing history. The system explains to users that they will be shown a variety of interventions (Figure~\ref{fig:onboarding_nudges}), a form of self-experimentation~\cite{Karkar:2017:TFS:3025453.3025480}, to help them reduce time on that site. These interventions are typically targeted to each site, for example a news feed blocker for Facebook or a related video hider for YouTube. However, some interventions such as a stopwatch timer can be added to any custom site. Users can preview the interventions for the sites they select, and enable or disable each intervention if desired. Users can later enable or disable interventions and sites through a settings page.
+
+\begin{figure}
 \includegraphics[width=\linewidth]{figures/onboarding_nudges_short}
 \caption{Users are presented with the interventions they will see on each site.}
   \label{fig:onboarding_nudges}
-\end{minipage}%
 \end{figure}
 
 HabitLab emphasizes to users the availability of multiple interventions and that it may show users different interventions each time they load a page. This emphasis is made clear on the HabitLab website, Chrome store listing, and through features in the dashboard such as visualizing the relative effectiveness of different interventions. HabitLab implements a multi-armed bandit algorithm to explore and find the interventions that are most effective for each user, optimizing for minimizing time spent on a site. However, in the experiments in this paper, we disabled this functionality and instead used simple random selection so that we can study the effects of rotation in isolation.
@@ -133,25 +131,54 @@ Removing Rewards & Operant conditioning~\cite{baron1991analyzing} & Hide the new
 
 % todo need to retake these screenshots so they're anonymous
 \begin{figure}
-\centering
 	\includegraphics[width=1.0\textwidth]{figures/interventions_new.png}
 	\caption{Examples of interventions available for reducing time on Facebook. From left to right, top to bottom: a timer injected into the news feed; a page before opening Facebook requiring that the user wait a few seconds before visiting; a countdown timer that automatically closes the tab after time elapses; an opt-in required to show the news feed; an interstitial page before opening Facebook with a quote; an interstitial page before opening Facebook that requires the user set a time limit for how long they will spend this session.}
 \label{fig:interventions}
 \end{figure}
 
-\section{HabitLab adoption and usage}
+\section{HabitLab adoption and user demographics}
 
-As of writing, the browser version of HabitLab has over 12,000 daily active users from 85 countries (US, India, Germany, France, and the UK are the top 5), and volunteers have translated it into 9 languages (German, French, Spanish, Dutch, Portuguese, Chinese, Czech, Greek, and Turkish). The Android version has over 500 daily active users.
+As of writing, the browser version of HabitLab has over 12,000 daily active users, and the Android version has over 500 daily active users.
+
+% todo need to retake these screenshots so they're anonymous
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{figuresS/user_ages.png}
+	\caption{Ages of HabitLab users. 25-35 is the most-represented demographic.}
+\label{fig:user_ages}
+\end{figure}
+
+Demographics according to Google Analytics indicate that our users are 81\% male, with the most commonly represented age group being 25-34, as shown in \ref{fig:user_ages}.
+
+% todo need to retake these screenshots so they're anonymous
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{figuresS/user_map.png}
+	\caption{Map of countries representing HabitLab users. North America, Europe, and Asia are all well-represented.}
+\label{fig:user_map}
+\end{figure}
+
+Our userbase represents a diverse set of countries and languages -- users represent 151 countries as shown in \ref{fig:user_map}. The top 10 countries are shown in \ref{fig:user_countries} -- the US is the most-represented country, representing 30\% of the userbase.
+
+% todo need to retake these screenshots so they're anonymous
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{figuresS/user_countries.png}
+	\caption{Top 10 countries using HabitLab. Users from the US account for 30\% of our userbase.}
+\label{fig:user_countries}
+\end{figure}
+
+Half of our userbase uses English as their preferred language for displaying webpages, as indicated in \ref{fig:user_languages}. Volunteers have translated HabitLab into 13 languages (Arabic, Chinese, Czech, Dutch, French, German, Greek, Italian, Polish, Portuguese, Russian, Spanish, and Turkish).
+
+% todo need to retake these screenshots so they're anonymous
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{figuresS/user_languages.png}
+	\caption{Languages that HabitLab users set as their preferred language to show webpages in. English is the preferred language of half of our users.}
+\label{fig:user_languages}
+\end{figure}
 
 The users were not explicitly recruited, but were rather all organic installs who discovered the extension/app via sources such as the Chrome/Play store, or were referred to it via press coverage in sources such as Wired or the New York Times.
 
 % Users discover the extension through news articles (it has been mentioned in Wired and the New York Times), the Chrome store, or links from an unrelated open-source project by the author.
 
 Users are asked to read and provide consent to the research protocol upon installation. They may opt out of data collection if they do not wish to have their data analyzed for research purposes.
-
-\section{User demographics}
-
-TODO
 
 \section{Design principles and tradeoffs}
 
