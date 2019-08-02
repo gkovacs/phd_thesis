@@ -4,7 +4,7 @@ We wish to spend our time more productively, but we sink hours into social media
 
 There are large numbers of users who wish to achieve behavior change goals, and a large design space for interventions. Thus, there is a natural opportunity to explore the design space of interventions and find what interventions works best, by testing them out with users. However, the existing ecosystem of behavior change tools does not make full use of this resource.
 
-Behavior change tools that are catered towards mass-market adoption by end users tend to employ a one-size-fits-all approach, implementing only a single behavior change intervention and giving the same experience to all users. Users can choose and select between different behavior change apps and extensions to find what they believe works well for them. However, because different apps are developed by different companies which do not share data, they cannot compare the interventions. They thus miss out on a rich opportunity for improving the behavior change systems via experimentation.
+Behavior change tools, both those tailored towards commercial mass-market adoption by end users as well as research systems, have tended to employ a one-size-fits-all approach \msb{we're not necessarily competing here against mass market tools, we're showing that we're pushing forward the state of the art. is this generally true of most systems, not just mass market ones?} \geza{done}, implementing only a single behavior change intervention and giving the same experience to all users. Users can choose and select between different behavior change apps and extensions to find what they believe works well for them. However, because different apps are developed by different companies which do not share data, they cannot compare the interventions. They thus miss out on a rich opportunity for improving the behavior change systems via experimentation.
 
 Research studies on behavior change, in contrast, have tended to compare only a small number of interventions, with small numbers of paid participants. They thus miss out on the ecological validity, scale, and statistical power that systems targeting the mass market of end users can enjoy.
 
@@ -33,9 +33,15 @@ There is a rich set of studies we can run with a tool such as HabitLab. The gene
 
 We believe that the HabitLab system is uniquely well-suited for investigating the letter two classes of problems within behavior change. Specifically, it allows us to quickly test a variety of different choices of interventions -- as we can make arbitrary changes to websites, or show arbitrary overlays over the phone screen. Additionally, it also enables us to precisely measure the outcomes of the interventions -- specifically, we can directly observe the amount of time users spend on sites.
 
+In addition to demonstrating the technical feasibility of such an in-the-wild experimentation system by building it and using it for studies, we demonstrate via HabitLab's large install base that it is possible to align user incentives with those of researchers within this behavior change domain. Many other studies rely on having to pay or force participants to use the system, as the primary beneficiary of the research is the researcher -- but with HabitLab, users benefit from the research, as the insights we gain from user behavior data allows the system to better help users achieve their goals.
+
+\msb{summarize what we learn on the design and systems side. that we demonstrate that it's possible to ...} \geza{done}
+
 \section{Thesis Overview}
 
 In this thesis we will first present the HabitLab system. Then we will describe a pair of studies conducted on the HabitLab system, which both study secondary effects that influence the intervention outcomes that we observe. %Then we will present three studies conducted on the HabitLab system: two analyzing the outcomes of interventions, and one study analyzing the choice of interventions to help users achieve those goals.
+
+\msb{typically we use \\ref and \\label to actually number the chapters here}
 
 \subsection{HabitLab System Chapter}
 
@@ -60,6 +66,8 @@ The contributions of this thesis are:
 \item A set of studies conducted on HabitLab showing that static interventions decline in effectiveness over time, and that rotating interventions can improve their effectiveness.
 \item A set of studies conducted on HabitLab showing that interventions can sometimes have beneficial secondary effects, reducing time spent on non-targeted sites.
 \end{enumerate}
+
+\msb{between 1 and 2, I'd like to see articulation of what the generalizable ideas are from the design of HabitLab. The contribution here isn't just HabitLab, it's the design ideas that HabitLab embodies.}
 
 % our contributions in this thesis are
 

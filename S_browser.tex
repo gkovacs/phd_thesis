@@ -1,5 +1,9 @@
 \section{Introduction}
 
+\msb{A note for the eventual TOCHI paper on HabitLab: it's generally frowned upon to use large sections of your own prior text. Check out TOCHI or CHI's self-plagiarism policy, think about what might need to be expanded or rewritten for a TOCHI paper. It's fine in a thesis.}
+
+\msb{For now or for TOCHI: this chapter will need to articulate more forcefully what the contribution of the tool is. What's novel about it?}
+
 Studying behavior change requires in-the-wild intervention and observation~\cite{consolvo2008activity}. Inspired by previous CSCW tools for naturalistic data collection~\cite{reinecke2015labinthewild}, we developed HabitLab~\cite{habitlab}, an open-source\footnote{HabitLab is available at \url{http://habitlab.github.io}.} platform, as a living laboratory to help us understand online behavior change and as a platform to explore novel behavior change designs (Figure~\ref{fig:homepage}).
 
 % HabitLab is a Chrome browser extension and Android application that contains a variety of productivity interventions. It aims to help users reduce their time spent online on web pages that the user specifies (e.g., Facebook, Twitter, and Reddit). The system is pitched to end users as a tool that explores various different interventions (referred to as ``nudges'') to help them reduce their time on sites.
@@ -81,7 +85,7 @@ Users install the extension, and go through an onboarding process where they sel
   \label{fig:onboarding_nudges}
 \end{figure}
 
-HabitLab emphasizes to users the availability of multiple interventions and that it may show users different interventions each time they load a page. This emphasis is made clear on the HabitLab website, Chrome store listing, and through features in the dashboard such as visualizing the relative effectiveness of different interventions. HabitLab implements a multi-armed bandit algorithm to explore and find the interventions that are most effective for each user, optimizing for minimizing time spent on a site. However, in the experiments in this paper, we disabled this functionality and instead used simple random selection so that we can study the effects of rotation in isolation.
+HabitLab emphasizes to users the availability of multiple interventions and that it may show users different interventions each time they load a page. This emphasis is made clear on the HabitLab website, Chrome store listing, and through features in the dashboard such as visualizing the relative effectiveness of different interventions. HabitLab implements a multi-armed bandit algorithm to explore and find the interventions that are most effective for each user, optimizing for minimizing time spent on a site. However, in the experiments in this paper, we disabled this functionality and instead used simple random selection so that we can study the effects of rotation in isolation. \msb{experiments?}
 
 \section{Mobile and Browser Versions}
 
@@ -170,7 +174,7 @@ Half of our userbase uses English as their preferred language for displaying web
 % todo need to retake these screenshots so they're anonymous
 \begin{figure}
 	\includegraphics[width=1.0\textwidth]{figuresS/user_languages.png}
-	\caption{Languages that HabitLab users set as their preferred language to show webpages in. English is the preferred language of half of our users.}
+	\caption{Languages that HabitLab users set as their preferred language to show webpages in. English is the preferred language of half of our users. \msb{the figures in this sectin of the document are all really large, take up whole page, I suggest scaling down}}
 \label{fig:user_languages}
 \end{figure}
 
@@ -184,7 +188,7 @@ Users are asked to read and provide consent to the research protocol upon instal
 
 We designed HabitLab from the start intending it to be a in-the-wild experimentation platform with a large number of users who would voluntarily and organically install it. As a result, we made a number of design decisions that prioritize growth and retention.
 
-Interventions can all be disabled by the end user, either temporarily for the duration of a session via a "Turn off" button shown on each intervention, or permanently. This is intended to boost retention by preventing uninstalls caused by users disliking a particular intervention. While this complicates some analyses -- for instance, we may have fewer samples about the effectiveness of less popular interventions that tend to be disabled more -- we believe this to be the appropriate tradeoff.
+Interventions can all be disabled by the end user, either temporarily for the duration of a session via a ``Turn off'' \msb{watch out for "word quotes", use ``latex quotes''} \geza{done} button shown on each intervention, or permanently. This is intended to boost retention by preventing uninstalls caused by users disliking a particular intervention. While this complicates some analyses -- for instance, we may have fewer samples about the effectiveness of less popular interventions that tend to be disabled more -- we believe this to be the appropriate tradeoff.
 
 Interventions are designed to be minimally intrusive. While in principle users can just disable interventions they do not like, we still found that many users would uninstall after seeing particular, intrusive interventions. We saw this pattern most notably with interventions that have interstitial screens -- that is, they prevent the user from interacting with the page until they have gone through the intervention. As a result, with the exception of a handful of interventions which must be in the interstitial format -- for instance, forcing the user to wait for 10 seconds before loading the page -- we tried to avoid interstitial interventions as much as possible.
 
