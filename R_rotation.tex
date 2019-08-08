@@ -1,27 +1,68 @@
-\msb{start with an orienting paragraph. what are we going to cover in this chapter, and why? and, what's the roadmap?}
+%\msb{start with an orienting paragraph. what are we going to cover in this chapter, and why? and, what's the roadmap?}
 
-\msb{the general role of a RW chapter is to cover the related work that sets up the context of your thesis. So, material that is relevant across all your chapters should show up here. Material that is specific to a single paper (e.g., rotation) should be in its respective chapter}
+%\msb{the general role of a RW chapter is to cover the related work that sets up the context of your thesis. So, material that is relevant across all your chapters should show up here. Material that is specific to a single paper (e.g., rotation) should be in its respective chapter} \geza{done}
 
-\msb{A section I don't see here, but should be here: a thorough survey of behavior change systems. What is the design space of such tools? What is the state of the art? How does HabitLab draw on those tools, and how does it innovate?}
+%\msb{A section I don't see here, but should be here: a thorough survey of behavior change systems. What is the design space of such tools? What is the state of the art? How does HabitLab draw on those tools, and how does it innovate?} \geza{done}
+
+In this chapter we will cover work in sociotechnical systems, psychology, and behavioral economics related to behavior change and persuasive technology. We will begin with theoretical frameworks and taxonomies about behavior change, discuss examples of behavior change systems, discuss various tools which behavior change systems make use of, and finally explore the causes of attrition and why behavior change systems fail.
 
 %----------------------------
 % RQ
-\section{Behavior Change And Motivation}
+\section{Behavior Change Theories}
 %The field of persuasive technology studies how technology can be used to influence behavior~\cite{fogg2002persuasive}. Persuasive technology systems have been successful in promoting behaviors such as sustainable resource usage~\cite{froehlich2009ubigreen}, fitness~\cite{consolvo2008activity}, sleep~\cite{kay2012lullaby,choe2011opportunities}, healthy eating~\cite{noronha2011platemate,epstein2016crumbs}, stress management~\cite{adams2014towards,sanches2010mind}, smoking cessation~\cite{paay2015personal}, and productivity~\cite{whittaker2016don, kim2016timeaware}. One common framework of behavior change is the B=MAT model~\cite{fogg2002persuasive}, which states that desired behaviors result when motivation, ability, and a trigger (a call to action) are all present. Another framework of habit change is the habit loop~\cite{eyal2014hooked}, which tells us that designs can build habits via a repeated process of displaying a trigger, having the user take an action, providing a reward, and having the user invest in the system.
 
-The field of persuasive technology studies how technology can be used to influence behavior~\cite{fogg2002persuasive}. Persuasive technology systems have been successful in promoting behaviors such as sustainable resource usage~\cite{froehlich2009ubigreen}, fitness~\cite{consolvo2008activity}, sleep~\cite{kay2012lullaby,choe2011opportunities}, healthy eating~\cite{noronha2011platemate,epstein2016crumbs}, stress management~\cite{adams2014towards,sanches2010mind}, smoking cessation~\cite{paay2015personal}, and productivity~\cite{whittaker2016don, kim2016timeaware}.
+\subsubsection{Theoretical Frameworks for Behavior Change}
+
+%\msb{I don't really see the point of section headers for so few paragraphs. instead, just use strong topic sentences} \geza{done}
+
+The field of persuasive technology studies how technology can be used to influence behavior~\cite{fogg2002persuasive}.
+ There are a number of theoretical frameworks describing behavior change systems. B=MAT is a popular framework of behavioral change~\cite{fogg2002persuasive}, which demonstrates that systems can focus on three elements---motivation, ability, and a trigger (a call to action)---to produce behavior change. The habit loop is another framework for building habits~\cite{eyal2014hooked}, stating that systems can build habits through an iterated process of displaying a trigger, prompting the user to take an action, giving out a reward, and helping the user to invest in the system.
+
+\subsubsection{Taxonomies of Behavior Change}
+
+A number of taxonomies characterize the design space of interventions, both general~\cite{michie2013behavior, behaviourchangewheel, abraham2008taxonomy, dolanmindspace} and domain-specific~\cite{hardeman2000interventions, west2010behavior}. Michie's behavior change taxonomy lists 93 techniques for behavior change, clustered according to the cognitive phenomenon they target~\cite{michie2013behavior}. Systems have investigated effects of these techniques individually, such as using ``cheating'' to support lapse management~\cite{agapie2016staying}, using different framings to present results~\cite{kim2016timeaware}, or setting goals and plans~\cite{agapie2016plansourcing}.
+
+\section{Behavior Change Systems}
+
+Persuasive technology systems have been successful in promoting behaviors such as sustainable resource usage~\cite{froehlich2009ubigreen}, fitness~\cite{consolvo2008activity}, sleep~\cite{kay2012lullaby,choe2011opportunities}, healthy eating~\cite{noronha2011platemate,epstein2016crumbs}, stress management~\cite{adams2014towards,sanches2010mind}, smoking cessation~\cite{paay2015personal}, and productivity~\cite{whittaker2016don, kim2016timeaware}.
 
 They can operate on many different platforms, such as the web or mobile devices. Web-based systems promote a behavior change goals including classroom engagement~\cite{anderson2014engaging, anderson2013steering}, psychology therapy~\cite{doi:10.1080/15228830802094429} and healthy habits~\cite{cugelman2013gamification, lyons2014behavior}. In parallel, a number of studies focused on mobile-based interventions~\cite{paredes2014poptherapy, RILEY201567, FJELDSOE2009165, Whittaker09, info:doi/10.2196/mhealth.4160}. For instance, MyBehavior, a mobile phone app, was built to track physical activities of the users and to provide personalized suggestions that are tailored to the users' historical behavioral data~\cite{info:doi/10.2196/mhealth.4160}. Similarly, PopTherapy is a mobile phone app that studied micro-interventions for coping with stress~\cite{paredes2014poptherapy}.
 
-\subsection{Theoretical Frameworks for Behavior Change}
+\subsubsection{Socialtechnical Systems for Behavior Change}
 
-\msb{I don't really see the point of section headers for so few paragraphs. instead, just use strong topic sentences}
+People use a variety of sociotechnical systems to support behavior change, including forums~\cite{eysenbach2004health, chancellornorms}, social sharing~\cite{poirier2012social, Chung:2016:BNA:2818048.2819926, pina2017personal, Ko:2015:NGI:2675133.2675244}, personal informatics~\cite{li2010stage, Chung:2017:PTB:3025453.3025747}, and self-experimentation~\cite{Karkar:2017:TFS:3025453.3025480}. People use behavior change forums to gain social support~\cite{hong2012outcomes} -- meeting social needs such as approval and esteem~\cite{kaplan1977social}. They do so by providing users with information and advice~\cite{hong2012outcomes}, and establishing norms~\cite{chancellornorms}. They also facilitate social comparisons~\cite{davison2000talks} which influence behaviors, as social comparison theory states that users seek to bring their behaviors in line with norms~\cite{festinger1954theory}. Communities also help users find others with similar experiences~\cite{huh2014health} who can help them through the process of recovering and adapting to changes~\cite{newman2011s}. Social sharing~\cite{poirier2012social, richardson2010online} works by helping users receive support through social interactions, and encouraging accountability~\cite{epstein2015nobody}. Personal informatics support behavior change through stages of preparation, collection, integration, reflection, and action~\cite{li2010stage}. The theory of lived informatics~\cite{epstein2015lived} adds additional stages where users choose tracking tools, and alternate between lapsing and resuming their tracking behaviors. % HabitLab combines personal informatics and self-experimentation to support behavior change. Our study draws on lived informatics by evaluating whether rotating interventions is an effective strategy to combat lapses such as ignoring interventions or uninstalling.
 
-There are a number of theoretical frameworks describing behavior change systems. B=MAT is a popular framework of behavioral change~\cite{fogg2002persuasive}, which demonstrates that systems can focus on three elements---motivation, ability, and a trigger (a call to action)---to produce behavior change. The habit loop is another framework for building habits~\cite{eyal2014hooked}, stating that systems can build habits through an iterated process of displaying a trigger, prompting the user to take an action, giving out a reward, and helping the user to invest in the system.
+% Of course, sociotechnical systems may also have deleterious effects --- communities may set unhealthy norms such as encouraging eating disorders~\cite{chancellornorms}, and social sharing can cause anxiety~\cite{munson2010happier}, impression management concerns~\cite{consolvo2014designing}, and make users unwilling to set goals~\cite{munson2015effects}.
 
-\subsection{Taxonomies of Behavior Change}
+% \msb{Can you pull this together into a summary of what we draw from this literature and how it influences HabitLab or our study?}
 
-A number of taxonomies characterize the design space of interventions, both general~\cite{michie2013behavior, behaviourchangewheel, abraham2008taxonomy, dolanmindspace} and domain-specific~\cite{hardeman2000interventions, west2010behavior}. Michie's behavior change taxonomy lists 93 techniques for behavior change, clustered according to the cognitive phenomenon they target~\cite{michie2013behavior}. Systems have investigated effects of these techniques individually, such as using ``cheating'' to support lapse management~\cite{agapie2016staying}, using different framings to present results~\cite{kim2016timeaware}, or setting goals and plans~\cite{agapie2016plansourcing}.
+\subsubsection{Online Behavior Change}
+
+One major topic inspiring our work is users' desires to curb or control their time spent on social media sites. People pressure themselves to, and often do, make efforts to reduce their time spent on social media sites such as Facebook and Twitter~\cite{Sleeper:2015:ILI:2675133.2675193,schoenebeck2014giving}. Yet this is difficult because users turn to social media to address their need to belong, the need for self-presentation, the need for self-esteem~\cite{nadkarni2012people}, the need for entertainment and gratification ~\cite{raacke2008myspace}, and self-affirmation ~\cite{toma2013self}. Whether social media use improves well-being is a complex question depending on the nature of the engagement ~\cite{uysal2013mediating, marche2012facebook, lin2015emotional, kim2011facebook, muise2009more, sagioglou2014facebook, tandoc2015facebook}, but thanks to instant gratification and sites' use of gamification~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining} and behavior design techniques~\cite{fogg2002persuasive, eyal2014hooked} to drive engagement, users keep coming back to the point that some consider it an addiction~\cite{andreassen2012development, ryan2014uses, tang2016personality, turel2014examination}. %Furthermore, social media sites make heavy use of gamification to drive engagement on their sites~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining}, and are cited as successful applications of behavior change theories~\cite{fogg2002persuasive, eyal2014hooked}.} %Furthermore, social media sites are designed to maximize user engagement, with features closely following gamification strategies~\cite{chou2015actionable} and behavior change theories~\cite{fogg2002persuasive, eyal2014hooked}.}
+
+\section{Tools Used By Behavior Change Systems}
+
+Researchers in behavioral economics and related fields have developed a number of tools which are useful for building behavior change systems. Gamification, which introduces triggers, investment, rewards, and game-like elements to motivate behavior change, and personalization are a pair of tools which are often used to boost the effectiveness of behavior change systems. Another one of these tools is \textit{choice architectures}, or ways to structure choices to influence behaviors.
+
+\subsubsection{Gamification}
+
+Much previous work has focused on gamification as an approach to design behavior change systems~\cite{deterding2011game}. Gamification has been shown to have positive effects on engagement and outcomes in behavior-change contexts such as promoting healthy habits~\cite{cugelman2013gamification, lyons2014behavior} and improving  educational engagement~\cite{anderson2013steering, anderson2014engaging}, though effectiveness varies depending on the context and design~\cite{6758978}. % Popular online services such as Facebook and LinkedIn make heavy use of gamification to drive engagement on their sites~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining}.
+
+
+\subsubsection{Personalization}
+
+A recent trend in behavior change systems has been the concept of personalizing interventions. Such systems explore several possible strategies using techniques such as multi-armed bandits to find the intervention that is most effective for the user~\cite{paredes2014poptherapy, rabbi2014automated}. For example, PopTherapy demonstrated personalized messaging could be found through such techniques~\cite{paredes2014poptherapy}. Likewise, HeartSteps conducted tens or hundreds of micro-randomized trials on users~\cite{doi:10.1111/j.1740-9713.2015.00863.x}.  % When multi-armed bandits are just beginning to get feedback from a user, they will try out several different interventions to see what works. This exploration has the effect of rotation, but the amount of rotation declines as the bandit begins to personalize. %In this paper, we examine the contrarian assertion that perhaps rotation should be maintained to sustain novelty even after the multi-armed bandit is aware of which intervention is most effective for the user.
+
+\subsubsection{Choice architectures}
+
+The field of behavioral economics has developed a number of theoretical frameworks for how to present choices to influence people's choices, known as choice architectures~\cite{thaler1980toward, thaler2009nudge, johnson2012beyond}. One of the best-known choice architectures is defaults -- the choice made if the user does not make an active choice -- which work by exploiting the status-quo bias~\cite{samuelson1988status}. Defaults have been found to be effective in numerous behavior change contexts, including increasing organ donations~\cite{johnson2003defaults}, encouraging saving for retirement~\cite{cronqvist2004design, madrian2001power}, and influencing choice of insurance plans~\cite{johnson1993framing}. Other examples of effective, widely deployed choice architectures include limiting the number of choices~\cite{cronqvist2004design, kling2008misperception}, sorting choices~\cite{lynch2000wine}, grouping choices~\cite{fox2005subjective}, and simplifying choice attributes to be more easily interpretable~\cite{peters2009bringing, soll2013consumer}. Some choice architectures are designed explicitly for interactive behavior change contexts where users repeatedly make choices, such as Enhanced Active Choice, which provides users with choices while attempting to steer them towards the desired one~\cite{keller2011enhanced}.
+
+%\subsection{Choice Architectures to Reduce Myopic Choices}
+
+A number of choice architectures have been developed to combat our bias towards myopic choices, aversion to uncertainty, and lead us to choices that have better long-term outcomes~\cite{johnson2012beyond}. If the user is choosing between short-term benefits and longer-term benefits, one strategy is to make the long-term outcomes of the choice more salient in the short term~\cite{weber2007asymmetric, soman2005psychology}. In cases where there are a large number of uncertain outcomes and we wish to encourage satisficing -- that is, choosing an acceptable option sooner rather than waiting for a hypothetical future optimal choice -- we can focus attention on the second-best outcomes~\cite{shu2008future}. This strategy of satisficing can both lead users to decide faster, and leave them happier with their choices~\cite{iyengar2006doing}. We can also combat procrastination resulting from users' tendency to be overly optimistic about future opportunity windows by explicitly enforcing limited opportunity windows~\cite{o1998procrastination}.
+
+
+
 
 % One of the most comprehensive investigations we
 % identified is a recent meta-analysis of 85 studies by
@@ -33,17 +74,6 @@ A number of taxonomies characterize the design space of interventions, both gene
 
 % Within the CSCW community, behavior change has been an active area of research. One major topic inspiring our work is users' desires to curb or control their time spent on social media sites. People pressure themselves to, and often do, make efforts to reduce their time spent on social media sites such as Facebook and Twitter~\cite{Sleeper:2015:ILI:2675133.2675193,schoenebeck2014giving}. This paper builds on this literature, contributing studies of how people might become more effective at this goal. Sociotechnical systems are also locations where people discuss behavior change~\cite{chancellornorms}, and find social support~\cite{Ko:2015:NGI:2675133.2675244, Chung:2017:PTB:3025453.3025747}. Behavior change often requires self-tracking, self-experimentation, and personal informatics~\cite{Karkar:2017:TFS:3025453.3025480}, leading to opportunities to share data and progress with trusted others~\cite{Chung:2016:BNA:2818048.2819926, pina2017personal}.
 
-\subsection{Socialtechnical Systems for Behavior Change}
-
-People use a variety of sociotechnical systems to support behavior change, including forums~\cite{eysenbach2004health, chancellornorms}, social sharing~\cite{poirier2012social, Chung:2016:BNA:2818048.2819926, pina2017personal, Ko:2015:NGI:2675133.2675244}, personal informatics~\cite{li2010stage, Chung:2017:PTB:3025453.3025747}, and self-experimentation~\cite{Karkar:2017:TFS:3025453.3025480}. People use behavior change forums to gain social support~\cite{hong2012outcomes} -- meeting social needs such as approval and esteem~\cite{kaplan1977social}. They do so by providing users with information and advice~\cite{hong2012outcomes}, and establishing norms~\cite{chancellornorms}. They also facilitate social comparisons~\cite{davison2000talks} which influence behaviors, as social comparison theory states that users seek to bring their behaviors in line with norms~\cite{festinger1954theory}. Communities also help users find others with similar experiences~\cite{huh2014health} who can help them through the process of recovering and adapting to changes~\cite{newman2011s}. Social sharing~\cite{poirier2012social, richardson2010online} works by helping users receive support through social interactions, and encouraging accountability~\cite{epstein2015nobody}. Personal informatics support behavior change through stages of preparation, collection, integration, reflection, and action~\cite{li2010stage}. The theory of lived informatics~\cite{epstein2015lived} adds additional stages where users choose tracking tools, and alternate between lapsing and resuming their tracking behaviors. % HabitLab combines personal informatics and self-experimentation to support behavior change. Our study draws on lived informatics by evaluating whether rotating interventions is an effective strategy to combat lapses such as ignoring interventions or uninstalling.
-
-% Of course, sociotechnical systems may also have deleterious effects --- communities may set unhealthy norms such as encouraging eating disorders~\cite{chancellornorms}, and social sharing can cause anxiety~\cite{munson2010happier}, impression management concerns~\cite{consolvo2014designing}, and make users unwilling to set goals~\cite{munson2015effects}.
-
-% \msb{Can you pull this together into a summary of what we draw from this literature and how it influences HabitLab or our study?}
-
-\subsection{Online Behavior Change}
-
-One major topic inspiring our work is users' desires to curb or control their time spent on social media sites. People pressure themselves to, and often do, make efforts to reduce their time spent on social media sites such as Facebook and Twitter~\cite{Sleeper:2015:ILI:2675133.2675193,schoenebeck2014giving}. Yet this is difficult because users turn to social media to address their need to belong, the need for self-presentation, the need for self-esteem~\cite{nadkarni2012people}, the need for entertainment and gratification ~\cite{raacke2008myspace}, and self-affirmation ~\cite{toma2013self}. Whether social media use improves well-being is a complex question depending on the nature of the engagement ~\cite{uysal2013mediating, marche2012facebook, lin2015emotional, kim2011facebook, muise2009more, sagioglou2014facebook, tandoc2015facebook}, but thanks to instant gratification and sites' use of gamification~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining} and behavior design techniques~\cite{fogg2002persuasive, eyal2014hooked} to drive engagement, users keep coming back to the point that some consider it an addiction~\cite{andreassen2012development, ryan2014uses, tang2016personality, turel2014examination}. %Furthermore, social media sites make heavy use of gamification to drive engagement on their sites~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining}, and are cited as successful applications of behavior change theories~\cite{fogg2002persuasive, eyal2014hooked}.} %Furthermore, social media sites are designed to maximize user engagement, with features closely following gamification strategies~\cite{chou2015actionable} and behavior change theories~\cite{fogg2002persuasive, eyal2014hooked}.}
 
 % datu2012does
 
@@ -58,17 +88,12 @@ One major topic inspiring our work is users' desires to curb or control their ti
 
 % \rev{Communities and collaborative support can help achieve behavior change goals. }
 
-\subsection{Gamification}
 
-Much previous work has focused on gamification as an approach to design behavior change systems~\cite{deterding2011game}. Gamification has been shown to have positive effects on engagement and outcomes in behavior-change contexts such as promoting healthy habits~\cite{cugelman2013gamification, lyons2014behavior} and improving  educational engagement~\cite{anderson2013steering, anderson2014engaging}, though effectiveness varies depending on the context and design~\cite{6758978}. % Popular online services such as Facebook and LinkedIn make heavy use of gamification to drive engagement on their sites~\cite{chou2015actionable, zichermann2011gamification, huotari2012defining}.
 
-\subsection{Attrition}
 
-Attrition is a major challenge in behavior change systems. Attrition~\cite{eysenbach2005law}, also known as dropout, occurs when participants stop participating, leave, or uninstall the system. Persuasive systems built for weight control and therapy have shown substantial attrition rates in longitudinal studies~\cite{Bernier1986,paredes2014poptherapy}, and prior work in CSCW has sought to help reduce attrition rates through techniques drawn from dieting and addiction research~\cite{agapie2016staying}. % This paper contributes a direct study of attrition and its antecedents.%this study the increments in attrition has not been discussed in detail or quantified in the context of rotating interventions in behavior change systems.
+%Attrition is a major challenge in behavior change systems: a metastudy of eHealth interventions found that an attrition rate around 99\% over a 12-week period is normal~\cite{eysenbach2005law}. %Similarly, attrition may also exist in our online behavior change system with rotating interventions. Studies in behavior changes systems report attrition of users over time. 
+%Likewise, the number of users in a stress-coping mobile application declined in a steady rate through the study~\cite{paredes2014poptherapy}. 
 
-\subsection{Personalization}
-
-A recent trend in behavior change systems has been the concept of personalizing interventions. Such systems explore several possible strategies using techniques such as multi-armed bandits to find the intervention that is most effective for the user~\cite{paredes2014poptherapy, rabbi2014automated}. For example, PopTherapy demonstrated personalized messaging could be found through such techniques~\cite{paredes2014poptherapy}. Likewise, HeartSteps conducted tens or hundreds of micro-randomized trials on users~\cite{doi:10.1111/j.1740-9713.2015.00863.x}.  When multi-armed bandits are just beginning to get feedback from a user, they will try out several different interventions to see what works. This exploration has the effect of rotation, but the amount of rotation declines as the bandit begins to personalize. In this paper, we examine the contrarian assertion that perhaps rotation should be maintained to sustain novelty even after the multi-armed bandit is aware of which intervention is most effective for the user.
 
 % The challenges of static interventions, and the rising wave of personalization systems, call into focus: would a rotation strategy work? Or is it a weak palliative with little discernible effect? This led to our research question:
 
@@ -79,56 +104,6 @@ A recent trend in behavior change systems has been the concept of personalizing 
 
 %----------------------------
 % HYP
-\section{Rotating Interventions}
-\msb{This feels to me like it's a section that really belongs in the rotation chapter, not here --- it doesn't address the related work to the thesis broadly}
-
-In this section, we review literature in behavior change systems and psychology to develop specific testable predictions regarding the research question.% Few studies has touched upon the quantification of effectiveness and attrition in the literature of online behavior changes systems. However, there are studies in behavior changes systems investigating the effectiveness of algorithmic interventions system. Meanwhile, previous work in behavior-change contexts has shown the porblem of attrition of behavioral interventions. This section presents a review of such studies and the proposal of our research hypotheses. 
-
-% \jingyi{reviewed papers? i would just say past work}
-\subsection{Effectiveness over time}
-While behavior change systems can be effective~\cite{doi:10.1080/15228830802094429, Cuijpers2008, info:doi/10.2196/jmir.1376}, many review papers are more restrained in whether behavior change systems remain effective over long periods of time~\cite{doi:10.1111/j.1467-789X.2009.00646.x, 10.1371/journal.pmed.1000387, NORMAN2007336, 10.1007/978-3-319-07127-5_11}. The critique holds that behavior changes are long, complex processes, and the effectiveness of a system is hard to maintain indefinitely~\cite{prochaska1997transtheoretical}. Prior work suggests that the effectiveness of showing a static intervention cannot be maintained indefinitely~\cite{Hiniker:2016:MDE:2858036.2858403, riekert2013handbook}. For example, when a health behavior change system started sending email reminders, the first reminder was successful 28\% of the time, but by the fifth reminder it was successful only 18\% of the time~\cite{kaptein2015personalizing}. A further meta-analysis of 88 computer-tailored interventions for health behavior change suggested that the efficacy of interventions decreases over time~\cite{krebs2010meta}. %This prompts our first hypothesis: %These literatures prompt our first hypothesis:
-
-%\begin{hyp}[H\ref*{hyp:decreaseovertime}] %\label{hyp:decreaseovertime}
-%Static interventions will suffer from decreased effectiveness over time.
-%\end{hyp}
-
-\subsection{The impact of rotation}
-Novelty can be a driving factor for effectiveness. %Novelty has been studied for years in psychology and brain sciences. 
-One study showed that novelty can influence encoding of information into long-term memory, which, in turn, may raise awareness of behavioral changes~\cite{doi:10.1111/j.1467-9450.2005.00443.x}. Studies of gamification also explore the effect of novelty on user engagement~\cite{6758978}.  %Studies of gamification also explore the effect of novelty in supporting user engagement~\cite{6758978}. 
-
-In web design, people begin ignoring parts of the screen that have little information scent, such as ads. This phenomenon is termed banner blindness, after the commonness of the effect in internet banner advertising~\cite{benway1998banner}. As static interventions remain deployed, they may suffer from the same banner blindness and lack of novelty (wear-out) effects, suggesting a potential mechanism for the decreased effectiveness over time.
-
-Rotating interventions may counter these effects.
-Different interventions appear in different parts of the interface, making it less likely that the user would ignore them wholesale.
-%In the system with static interventions, the wear-out effect may be one mechanism behind the decrement of effectiveness over time. On the other hand, 
-Online behavior change systems that use machine learning algorithms such as multi-armed bandits hone in on a small number of interventions to use~\cite{paredes2014poptherapy, rabbi2014automated}, but during the early exploration phases they are essentially rotating between interventions. %Evidence shows that behavior changes system which implemented the algorithm showed higher effectiveness in the short term~\cite{paredes2014poptherapy}. 
-%Rotating between interventions without machine learning systems behind the scenes also has proven effective in PMS system. Comparing to PMS system that shows static intervention, 
-Systems that personalize interventions~\cite{kaptein2015personalizing} or deploy many micro-studies% Additionally, one study that examined \textit{Fitbit}\'s random rotation interventions, has found an increase in the effectiveness of such interventions
-~\cite{doi:10.1111/j.1740-9713.2015.00863.x}
-have generally found positive effects.
-
-%Based on these results, non-static interventions may be effective. We hypothesize:
-
-%\begin{hyp}[H\ref*{hyp:rotation}] \label{hyp:rotation}
-%Rotation will increase effectiveness, compared to static interventions.
-%\end{hyp}
-
-%\textit{H2: Rotating interventions will increase effectiveness of a behavior change system, compared to always showing the same one.}
-
-\subsection{Attrition}
-
-Attrition is a major challenge in behavior change systems: a metastudy of eHealth interventions found that an attrition rate around 99\% over a 12-week period is normal~\cite{eysenbach2005law}. %Similarly, attrition may also exist in our online behavior change system with rotating interventions. Studies in behavior changes systems report attrition of users over time. 
-Likewise, the number of users in a stress-coping mobile application declined in a steady rate through the study~\cite{paredes2014poptherapy}. 
-
-Though rotating interventions aids novelty, the literature suggests that it may hurt attrition. Rotation violates usability heuristics such as consistency and user control~\cite{nielsen199510}. Specifically, users may perceive a loss of control when they are presented with ever-changing interventions, %As a result, users may treat the system as an authoritarian figure. This perception may 
-potentially leading to non-compliance behaviors and a higher attrition
-rate~\cite{coco2018hiniker}. %Furthermore, with interventions randomly genenerated by eletronic devices, persuasive systems are designed without a user-oriented perspective. 
-Typically, in attrition-risky domains such as education, an effective user-centered design is critical for minimizing attrition~\cite{Angelino2007learning}. %In light of these results, we hypothesize:
-
-%\begin{hyp}[H\ref*{hyp:attrition}] \label{hyp:attrition}
-%Rotation will increase attrition, compared to static interventions.
-%\end{hyp}
-
 
 
 %----------------------------

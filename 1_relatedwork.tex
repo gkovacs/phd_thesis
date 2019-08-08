@@ -1,8 +1,62 @@
 %----------------------------
 % RQ
+\section{Related Work}
+
+%\section{Rotating Interventions}
+%\msb{This feels to me like it's a section that really belongs in the rotation chapter, not here --- it doesn't address the related work to the thesis broadly}
+
+In this section, we review literature in behavior change systems and psychology to develop specific testable predictions regarding the research question.% Few studies has touched upon the quantification of effectiveness and attrition in the literature of online behavior changes systems. However, there are studies in behavior changes systems investigating the effectiveness of algorithmic interventions system. Meanwhile, previous work in behavior-change contexts has shown the porblem of attrition of behavioral interventions. This section presents a review of such studies and the proposal of our research hypotheses. 
+
+% \jingyi{reviewed papers? i would just say past work}
+\subsection{Effectiveness over time}
+While behavior change systems can be effective~\cite{doi:10.1080/15228830802094429, Cuijpers2008, info:doi/10.2196/jmir.1376}, many review papers are more restrained in whether behavior change systems remain effective over long periods of time~\cite{doi:10.1111/j.1467-789X.2009.00646.x, 10.1371/journal.pmed.1000387, NORMAN2007336, 10.1007/978-3-319-07127-5_11}. The critique holds that behavior changes are long, complex processes, and the effectiveness of a system is hard to maintain indefinitely~\cite{prochaska1997transtheoretical}. Prior work suggests that the effectiveness of showing a static intervention cannot be maintained indefinitely~\cite{Hiniker:2016:MDE:2858036.2858403, riekert2013handbook}. For example, when a health behavior change system started sending email reminders, the first reminder was successful 28\% of the time, but by the fifth reminder it was successful only 18\% of the time~\cite{kaptein2015personalizing}. A further meta-analysis of 88 computer-tailored interventions for health behavior change suggested that the efficacy of interventions decreases over time~\cite{krebs2010meta}. %This prompts our first hypothesis: %These literatures prompt our first hypothesis:
+
+%\begin{hyp}[H\ref*{hyp:decreaseovertime}] %\label{hyp:decreaseovertime}
+%Static interventions will suffer from decreased effectiveness over time.
+%\end{hyp}
+
+\subsection{The impact of rotation}
+Novelty can be a driving factor for effectiveness. %Novelty has been studied for years in psychology and brain sciences. 
+One study showed that novelty can influence encoding of information into long-term memory, which, in turn, may raise awareness of behavioral changes~\cite{doi:10.1111/j.1467-9450.2005.00443.x}. Studies of gamification also explore the effect of novelty on user engagement~\cite{6758978}.  %Studies of gamification also explore the effect of novelty in supporting user engagement~\cite{6758978}. 
+
+In web design, people begin ignoring parts of the screen that have little information scent, such as ads. This phenomenon is termed banner blindness, after the commonness of the effect in internet banner advertising~\cite{benway1998banner}. As static interventions remain deployed, they may suffer from the same banner blindness and lack of novelty (wear-out) effects, suggesting a potential mechanism for the decreased effectiveness over time.
+
+Rotating interventions may counter these effects.
+Different interventions appear in different parts of the interface, making it less likely that the user would ignore them wholesale.
+%In the system with static interventions, the wear-out effect may be one mechanism behind the decrement of effectiveness over time. On the other hand, 
+Online behavior change systems that use machine learning algorithms such as multi-armed bandits hone in on a small number of interventions to use~\cite{paredes2014poptherapy, rabbi2014automated}, but during the early exploration phases they are essentially rotating between interventions. %Evidence shows that behavior changes system which implemented the algorithm showed higher effectiveness in the short term~\cite{paredes2014poptherapy}. 
+%Rotating between interventions without machine learning systems behind the scenes also has proven effective in PMS system. Comparing to PMS system that shows static intervention, 
+Systems that personalize interventions~\cite{kaptein2015personalizing} or deploy many micro-studies% Additionally, one study that examined \textit{Fitbit}\'s random rotation interventions, has found an increase in the effectiveness of such interventions
+~\cite{doi:10.1111/j.1740-9713.2015.00863.x}
+have generally found positive effects.
+
+%Based on these results, non-static interventions may be effective. We hypothesize:
+
+%\begin{hyp}[H\ref*{hyp:rotation}] \label{hyp:rotation}
+%Rotation will increase effectiveness, compared to static interventions.
+%\end{hyp}
+
+%\textit{H2: Rotating interventions will increase effectiveness of a behavior change system, compared to always showing the same one.}
+
+\subsection{Attrition}
+
+Attrition is a major challenge in behavior change systems: a metastudy of eHealth interventions found that an attrition rate around 99\% over a 12-week period is normal~\cite{eysenbach2005law}. %Similarly, attrition may also exist in our online behavior change system with rotating interventions. Studies in behavior changes systems report attrition of users over time. 
+Likewise, the number of users in a stress-coping mobile application declined in a steady rate through the study~\cite{paredes2014poptherapy}. 
+
+Though rotating interventions aids novelty, the literature suggests that it may hurt attrition. Rotation violates usability heuristics such as consistency and user control~\cite{nielsen199510}. Specifically, users may perceive a loss of control when they are presented with ever-changing interventions, %As a result, users may treat the system as an authoritarian figure. This perception may 
+potentially leading to non-compliance behaviors and a higher attrition
+rate~\cite{coco2018hiniker}. %Furthermore, with interventions randomly genenerated by eletronic devices, persuasive systems are designed without a user-oriented perspective. 
+Typically, in attrition-risky domains such as education, an effective user-centered design is critical for minimizing attrition~\cite{Angelino2007learning}. %In light of these results, we hypothesize:
+
+%\begin{hyp}[H\ref*{hyp:attrition}] \label{hyp:attrition}
+%Rotation will increase attrition, compared to static interventions.
+%\end{hyp}
+
+
+
 \section{Research Questions}
 
-A recent trend in behavior change systems has been the concept of personalizing interventions. Such systems explore several possible strategies using techniques such as multi-armed bandits to find the intervention that is most effective for the user~\cite{paredes2014poptherapy, rabbi2014automated}. For example, PopTherapy demonstrated personalized messaging could be found through such techniques~\cite{paredes2014poptherapy}. Likewise, HeartSteps conducted tens or hundreds of micro-randomized trials on users~\cite{doi:10.1111/j.1740-9713.2015.00863.x}.  When multi-armed bandits are just beginning to get feedback from a user, they will try out several different interventions to see what works. This exploration has the effect of rotation, but the amount of rotation declines as the bandit begins to personalize. In this paper, we examine the contrarian assertion that perhaps rotation should be maintained to sustain novelty even after the multi-armed bandit is aware of which intervention is most effective for the user.
+A recent trend in behavior change systems has been the concept of personalizing interventions. Such systems explore several possible strategies using techniques such as multi-armed bandits to find the intervention that is most effective for the user~\cite{paredes2014poptherapy, rabbi2014automated}. For example, PopTherapy demonstrated personalized messaging could be found through such techniques~\cite{paredes2014poptherapy}. Likewise, HeartSteps conducted tens or hundreds of micro-randomized trials on users~\cite{doi:10.1111/j.1740-9713.2015.00863.x}.  When multi-armed bandits are just beginning to get feedback from a user, they will try out several different interventions to see what works. This exploration has the effect of rotation, but the amount of rotation declines as the bandit begins to personalize. In this chapter, we examine the contrarian assertion that perhaps rotation should be maintained to sustain novelty even after the multi-armed bandit is aware of which intervention is most effective for the user.
 
 The challenges of static interventions, and the rising wave of personalization systems, call into focus: would a rotation strategy work? Or is it a weak palliative with little discernible effect? This led to our research question:
 
